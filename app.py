@@ -72,6 +72,9 @@ def view_stats():
     with open("session_data.json", "r") as file:
         sessions = json.load(file) # Loads the sessions for the JSON file.
         
+        if not sessions: # If there are no sessions, it outputs a message saying so.
+            return render_template("message.html", message="No sessions found. Start a session to see stats.")
+
         total_duration = 0
         for session in sessions:
             total_duration += session["duration"] # Adds each session duration to the total.
