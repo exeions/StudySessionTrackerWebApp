@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Study Session Tracker</title>
+    <link href="{{ url_for('static', filename='styles/style.css')}}" rel="stylesheet" />
+</head>
+<body>
+    <h1>Study Session Stats</h1>
+
+    <h2>Total Study Time: {{ total_duration }}</h2>
+
+    <ul>
+        {% for session in sessions %}
+            <li><strong>{{ session.session }}</strong>: {{ session.duration }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('index') }}">
+        <button>Back to Home</button>
+    </a>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Study Session Tracker</title>
+    <link href="{{ url_for('static', filename='styles/style.css')}}" rel="stylesheet" />
+</head>
+
+<body>
+    <h1>Smart Study Session Tracker</h1>
+
+    <!--Form to start a new study session-->
+    <form action="{{ url_for('start_session') }}" method="POST">
+        <input type="text" name="subject" id="session" placeholder="Enter a subject" required />
+        <button type="submit">Start Session</button>
+    </form>
+
+    <!--Form to end the current study session-->
+    <form action="{{ url_for('end_session') }}" method="POST" style="margin-top: 10px;">
+        <button type="submit">End Session</button>
+    </form>
+
+    <!--View Stats Button-->
+    <form action="{{ url_for('view_stats') }}" method="GET" style="margin-top: 10px;">
+        <button type="submit">View Stats</button>
+    </form>
+</body>
+</html>

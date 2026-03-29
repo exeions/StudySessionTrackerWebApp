@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Ended</title>
+    <link href="{{ url_for('static', filename='styles/style.css')}}" rel="stylesheet" />
+</head>
+
+<body>
+    <h1>Session Ended</h1>
+    <p>You have ended the study session for: <strong>{{ subject }}</strong></p>
+    <p>Duration: <strong>{{ duration }}</strong></p>
+
+    <a href="{{url_for('index')}}">
+        <button>Back to Home</button>
+    </a>
+</body>
+</html>
